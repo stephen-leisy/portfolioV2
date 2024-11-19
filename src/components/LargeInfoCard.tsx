@@ -14,12 +14,12 @@ export const LargeInfoCard: React.FC<ILargeInfoCard> = ({
   text,
 }) => (
   <Flex
-    p={{ base: 6, md: 8 }}
+    p={{ base: 4, md: 8 }}
     borderWidth={1}
     borderRadius="lg"
     borderColor="gray.300"
     gap={{ base: 10, md: 8 }}
-    maxW={{ base: '80vw', xl: '60vw' }}
+    maxW={{ base: '96vw', md: '90vw', xl: '80vw' }}
     flexDirection={{ base: 'column', md: 'row' }}
   >
     {imagePath && (
@@ -30,7 +30,7 @@ export const LargeInfoCard: React.FC<ILargeInfoCard> = ({
       />
     )}
     <Flex color="gray.800" flexDirection="column" gap={2} w="fit-content">
-      <Text fontSize="5xl" fontWeight="bold" mb={2}>
+      <Text fontSize={{ base: '2xl', md: '5xl' }} fontWeight="bold" mb={2}>
         {header}
       </Text>
       <Text fontSize="xl">{subHeader}</Text>
