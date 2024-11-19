@@ -1,4 +1,4 @@
-import { Flex, Text, Box } from '@chakra-ui/react';
+import { Flex, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 
 interface ILargeInfoCard {
@@ -28,13 +28,10 @@ export const LargeInfoCard: React.FC<ILargeInfoCard> = ({
       <Image
         src={imagePath}
         quality={100}
-        // sizes="40vh"
         width={400}
         height={500}
         style={{
           borderRadius: '.5rem',
-          //   width: '100%',
-          //   height: 'auto',
         }}
         alt="bathroom selfie of portfolio author"
       />
