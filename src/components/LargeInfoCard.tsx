@@ -1,5 +1,4 @@
-import { Flex, Text } from '@chakra-ui/react';
-import Image from 'next/image';
+import { Flex, Text, Image } from '@chakra-ui/react';
 
 interface ILargeInfoCard {
   imagePath?: string;
@@ -19,21 +18,15 @@ export const LargeInfoCard: React.FC<ILargeInfoCard> = ({
     borderWidth={1}
     borderRadius="lg"
     borderColor="gray.300"
-    minH="600px"
     gap={{ base: 10, md: 8 }}
     maxW={{ base: '90vw', xl: '60vw' }}
     flexDirection={{ base: 'column', md: 'row' }}
   >
     {imagePath && (
       <Image
-        src={imagePath}
-        quality={100}
-        width={400}
-        height={500}
-        style={{
-          borderRadius: '.5rem',
-        }}
-        alt="bathroom selfie of portfolio author"
+        src="https://media.licdn.com/dms/image/v2/D5603AQHpGAkvPM6RuQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1730322372345?e=1737590400&v=beta&t=KAGPVIMHE-83If5hErx8LzWBmOq7B0gQviDv7HhqJnE"
+        boxSize="350px"
+        borderRadius="full"
       />
     )}
     <Flex
