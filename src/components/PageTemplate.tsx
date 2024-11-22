@@ -1,0 +1,25 @@
+import React from 'react';
+import { Box, Text, Image, Flex } from '@chakra-ui/react';
+import { loremIpsum } from '@/utils/loremIpsum';
+
+export const PageTemplate: React.FC<{
+  pageName: string;
+  columnOne: string;
+  columnTwo: string;
+  imgUrl: string;
+}> = ({ pageName, columnOne, columnTwo, imgUrl }) => (
+  <Flex flexDirection="column" w="70%" overflow="scroll" gap={4}>
+    <Image w="65%" src={imgUrl} />
+    <Text fontWeight={700} fontSize="xl" mt={2}>
+      {pageName}
+    </Text>
+    <Flex gap={5}>
+      <Text fontSize="xs" w="50%" fontWeight={500}>
+        {columnOne}
+      </Text>
+      <Text fontSize="xs" w="50%" fontWeight={500}>
+        {columnTwo}
+      </Text>
+    </Flex>
+  </Flex>
+);
