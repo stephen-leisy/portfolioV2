@@ -3,7 +3,7 @@ import { Poppins } from 'next/font/google';
 import './globals.css';
 import { Providers } from './providers';
 import { NameAndTitle } from '@/components/NameAndTitle';
-import { Flex, Box, Text, VStack } from '@chakra-ui/react';
+import { Flex, Box, VStack } from '@chakra-ui/react';
 import { Navigation } from '@/components/navigation/Navigation';
 
 const poppins = Poppins({
