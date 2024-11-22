@@ -1,5 +1,11 @@
 'use strict';
-export const navigationConfig = [
+
+interface INavigationConfig {
+  display: string;
+  link: string;
+}
+
+export const navigationConfig: INavigationConfig[] = [
   {
     display: 'Home',
     link: '/',

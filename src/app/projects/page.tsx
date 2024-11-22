@@ -1,7 +1,7 @@
 import { PageTemplate } from '@/components/PageTemplate';
 import { loremIpsum } from '@/utils/loremIpsum';
 
-const page = () => (
+const page: React.FC = () => (
   <PageTemplate
     pageName="Projects Coming Soon"
     columnOne={loremIpsum[0]}

@@ -1,7 +1,7 @@
 import { PageTemplate } from '@/components/PageTemplate';
 import { loremIpsum } from '@/utils/loremIpsum';
 
-const Home = () => (
+const Home: React.FC = () => (
   <PageTemplate
     pageName="Home"
     columnOne=" Hello there and welcome to my small portion of the internet! Im a curious
