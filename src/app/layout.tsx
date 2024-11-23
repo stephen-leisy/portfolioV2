@@ -35,7 +35,11 @@ export default function RootLayout({
               p={8}
               color="gray.800"
             >
-              <Flex w="70%" alignItems="flex-end">
+              <Flex
+                w="70%"
+                alignItems={{ base: 'flex-start', md: 'flex-end' }}
+                overflow="scroll"
+              >
                 {children}
               </Flex>
               <VStack

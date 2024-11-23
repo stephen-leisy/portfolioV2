@@ -14,16 +14,16 @@ export const PageTemplate: React.FC<IPageTemplate> = ({
   columnTwo,
   imgUrl,
 }) => (
-  <Flex flexDirection="column" w="70%" overflow="scroll" gap={4}>
+  <Flex flexDirection="column" w="70%" gap={4} pt={{ base: 16, md: 0 }}>
     <Image w="65%" src={imgUrl} alt="images for portfolio site" />
     <Text fontWeight={700} fontSize="xl" mt={2}>
       {pageName}
     </Text>
-    <Flex gap={5}>
-      <Text fontSize="xs" w="50%" fontWeight={500}>
+    <Flex gap={5} flexDirection={{ base: 'column', md: 'row' }}>
+      <Text fontSize="xs" w={{ base: '100%', md: '50%' }} fontWeight={500}>
         {columnOne}
       </Text>
-      <Text fontSize="xs" w="50%" fontWeight={500}>
+      <Text fontSize="xs" w={{ base: '100%', md: '50%' }} fontWeight={500}>
         {columnTwo}
       </Text>
     </Flex>

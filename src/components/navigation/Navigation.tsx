@@ -19,6 +19,7 @@ export const Navigation: React.FC = () => {
           borderBottomWidth={pathname === link ? 1 : 0}
           borderBottomColor="gray.700"
           _hover={{ color: 'gray.500' }}
+          fontSize={{ base: 'sm', md: 'md' }}
         >
           {display}
         </Text>
