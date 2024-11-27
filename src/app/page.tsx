@@ -8,8 +8,8 @@ const Home: React.FC = () => (
       creative at its core and enjoy utilizing my technical skill and artistic
       background to build practical applications with elegant, clean code."
     columnTwo="This site is still heavily under construction so please pardon all the lorem ipsum. Im currently learning GO to add to my stack of faves (Typescript/React/Next.js/Node.js) and neglecting my portfolio duties."
-    imgUrl="https://pbs.twimg.com/profile_images/1350902081352187904/RHSJhRyx_400x400.jpg"
-    imageWidth="55%"
+    imgUrl="https://i.ibb.co/pyZ74P5/IMG-4022.jpg"
+    imageWidth="40%"
   />
 );
 
