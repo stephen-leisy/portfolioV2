@@ -1,5 +1,4 @@
 import { PageTemplate } from '@/components/PageTemplate';
-import { loremIpsum } from '@/utils/loremIpsum';
 
 const Home: React.FC = () => (
   <PageTemplate
@@ -8,8 +7,9 @@ const Home: React.FC = () => (
       person who likes to build things with code. I believe web development is
       creative at its core and enjoy utilizing my technical skill and artistic
       background to build practical applications with elegant, clean code."
-    columnTwo={loremIpsum[1]}
-    imgUrl="https://scontent-sea1-1.xx.fbcdn.net/v/t39.30808-6/465715123_10106632498412008_8522622303362615847_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=b04a48&_nc_ohc=TG47aDD44OgQ7kNvgHaeFu5&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&_nc_gid=AwYPdGqR5kT72JsxTHaW3hG&oh=00_AYDK9lOKxmng83aOCHBbN2058biJeoKppV63l6M3xfqnsA&oe=6746CFFA"
+    columnTwo="This site is still heavily under construction so please pardon all the lorem ipsum. Im currently learning GO to add to my stack of faves (Typescript/React/Next.js/Node.js) and neglecting my portfolio duties."
+    imgUrl="https://pbs.twimg.com/profile_images/1350902081352187904/RHSJhRyx_400x400.jpg"
+    imageWidth="55%"
   />
 );
 

@@ -26,13 +26,19 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={poppins.className}>
       <body>
         <Providers>
-          <Box h="100vh" w="100vw" p={8} bg="gray.50">
+          <Box
+            h="100vh"
+            w="100vw"
+            p={{ base: 4, md: 8 }}
+            bg="gray.50"
+            minH="650px"
+          >
             <Flex
               borderWidth={1}
               borderColor="gray.700"
               h="full"
               w="full"
-              p={8}
+              p={{ base: 4, md: 8 }}
               color="gray.800"
             >
               <Flex

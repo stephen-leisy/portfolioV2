@@ -6,6 +6,7 @@ interface IPageTemplate {
   columnOne: string;
   columnTwo: string;
   imgUrl: string;
+  imageWidth?: string;
 }
 
 export const PageTemplate: React.FC<IPageTemplate> = ({
@@ -13,9 +14,10 @@ export const PageTemplate: React.FC<IPageTemplate> = ({
   columnOne,
   columnTwo,
   imgUrl,
+  imageWidth = '65%',
 }) => (
   <Flex flexDirection="column" w="70%" gap={4} pt={{ base: 16, md: 0 }}>
-    <Image w="65%" src={imgUrl} alt="images for portfolio site" />
+    <Image w={imageWidth} src={imgUrl} alt="images for portfolio site" />
     <Text fontWeight={700} fontSize="xl" mt={2}>
       {pageName}
     </Text>
