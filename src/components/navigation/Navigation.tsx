@@ -13,6 +13,7 @@ export const Navigation: React.FC = () => {
       {navigationConfig.map(({ display, link }) => (
         <Text
           key={display}
+          zIndex="40"
           cursor="pointer"
           onClick={() => router.push(link)}
           fontWeight={600}

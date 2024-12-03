@@ -40,13 +40,15 @@ export default function RootLayout({
               w="full"
               p={{ base: 4, md: 8 }}
               color="gray.800"
+              overflow="scroll"
+              // overflowY="scroll"
             >
               <Flex
-                w={{ base: '100%', md: '70%' }}
+                w={{ base: 'full', md: '70%' }}
                 h="full"
                 alignItems={{ base: 'flex-start', md: 'flex-end' }}
-                overflow="scroll"
                 position="relative"
+                zIndex="30"
               >
                 {children}
               </Flex>
@@ -54,11 +56,12 @@ export default function RootLayout({
                 h="full"
                 position={{ base: 'absolute', md: 'relative' }}
                 right={{ base: 8, md: 0 }}
-                w={{ base: '80%', md: '30%' }}
+                w={{ base: '100%', md: '30%' }}
                 flexDir={{ base: 'column-reverse', md: 'column' }}
                 alignItems="flex-end"
                 justifyContent="flex-end"
                 gap={6}
+                overflow="scroll"
               >
                 <Navigation />
                 <NameAndTitle />

@@ -16,14 +16,12 @@ export const PageTemplate: React.FC<IPageTemplate> = ({
   imgUrl,
   imageWidth = '65%',
 }) => (
-  <Flex
-    flexDirection="column"
-    w="70%"
-    gap={4}
-    pt={{ base: 32, md: 0 }}
-    overflow="scroll"
-  >
-    <Image w={imageWidth} src={imgUrl} alt="images for portfolio site" />
+  <Flex flexDirection="column" w="70%" gap={4} pt={{ base: 32, md: 0 }}>
+    <Image
+      w={{ base: '80%', md: imageWidth }}
+      src={imgUrl}
+      alt="images for portfolio site"
+    />
     <Text fontWeight={700} fontSize="xl" mt={2}>
       {pageName}
     </Text>
