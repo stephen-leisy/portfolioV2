@@ -9,6 +9,7 @@ import { ViewModeIconToggle } from '../ViewModeIconToggle';
 export const Navigation: React.FC = () => {
   const router = useRouter();
   const pathname = usePathname();
+
   const { theme, setTheme } = useTheme();
   const darkMode = theme === 'dark';
 
