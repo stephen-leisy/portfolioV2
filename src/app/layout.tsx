@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className={poppins.className}>
-      <body>
+      <body style={{ overflow: 'hidden' }}>
         <Providers>
           <Box
             h="100vh"
@@ -42,22 +42,27 @@ export default function RootLayout({
               color="gray.800"
             >
               <Flex
-                w="70%"
+                w={{ base: '100%', md: '70%' }}
+                h="full"
                 alignItems={{ base: 'flex-start', md: 'flex-end' }}
                 overflow="scroll"
+                position="relative"
               >
                 {children}
               </Flex>
-              <VStack
+              <Flex
                 h="full"
-                w="30%"
+                position={{ base: 'absolute', md: 'relative' }}
+                right={{ base: 8, md: 0 }}
+                w={{ base: '80%', md: '30%' }}
+                flexDir={{ base: 'column-reverse', md: 'column' }}
                 alignItems="flex-end"
                 justifyContent="flex-end"
                 gap={6}
               >
                 <Navigation />
                 <NameAndTitle />
-              </VStack>
+              </Flex>
             </Flex>
           </Box>
         </Providers>
