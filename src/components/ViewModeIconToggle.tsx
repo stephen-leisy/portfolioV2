@@ -1,5 +1,6 @@
-// import { MoonIcon, SunIcon } from '@chakra-ui/icons';
-import { Box } from '@chakra-ui/react';
+'use client';
+import { HiOutlineSun, HiOutlineMoon } from 'react-icons/hi';
+import { Box, IconButton, Text } from '@chakra-ui/react';
 import { useEffect } from 'react';
 
 export const ViewModeIconToggle: React.FC<{
@@ -20,23 +21,30 @@ export const ViewModeIconToggle: React.FC<{
 
   return (
     <Box cursor="pointer" zIndex={50}>
-      {darkMode}
-      {/* {darkMode ? (
-        <SunIcon
+      {darkMode ? (
+        <IconButton
+          size="2xs"
+          as={HiOutlineSun}
+          variant="ghost"
           color="gray.50"
           _hover={{
             color: 'pink.300',
+            bg: 'gray.800',
           }}
           onClick={() => onClick('light')}
         />
       ) : (
-        <MoonIcon
+        <IconButton
+          size="2xs"
+          as={HiOutlineMoon}
+          variant="ghost"
           _hover={{
             color: 'gray.500',
+            bg: 'gray.50',
           }}
           onClick={() => onClick('dark')}
         />
-      )} */}
+      )}
     </Box>
   );
 };
