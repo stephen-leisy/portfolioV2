@@ -1,6 +1,7 @@
 'use client';
+
 import { HiOutlineSun, HiOutlineMoon } from 'react-icons/hi';
-import { Box, IconButton, Text } from '@chakra-ui/react';
+import { Box, IconButton } from '@chakra-ui/react';
 import { useEffect } from 'react';
 
 export const ViewModeIconToggle: React.FC<{
@@ -39,7 +40,7 @@ export const ViewModeIconToggle: React.FC<{
           as={HiOutlineMoon}
           variant="ghost"
           _hover={{
-            color: 'gray.500',
+            color: 'pink.300',
             bg: 'gray.50',
           }}
           onClick={() => onClick('dark')}

@@ -28,14 +28,14 @@ export const Navigation: React.FC = () => {
         <Text
           key={display}
           zIndex="40"
-          cursor="pointer"
+          cursor={pathname !== link ? 'pointer' : 'default'}
           onClick={() => router.push(link)}
           fontWeight={600}
           borderBottomWidth={pathname === link ? 1 : 0}
           borderBottomColor={darkMode ? 'gray.100' : 'gray.700'}
           _hover={{
-            color: darkMode ? 'pink.300' : 'gray.500',
-            borderBottomColor: darkMode ? 'pink.300' : 'gray.500',
+            color: (pathname !== link && 'pink.300') || 'inherit',
+            borderBottomColor: (pathname !== link && 'pink.300') || '',
           }}
           fontSize={{ base: 'sm', md: 'md' }}
         >
