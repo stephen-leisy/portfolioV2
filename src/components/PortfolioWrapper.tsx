@@ -13,7 +13,12 @@ export const PortfolioWrapper: React.FC<{ children: React.ReactNode }> = ({
   const darkMode = theme === 'dark';
 
   return (
-    <Box h="100vh" w="100vw" bg={darkMode ? 'gray.800' : 'gray.50'}>
+    <Box
+      h="100vh"
+      w="100vw"
+      bg={darkMode ? 'gray.800' : 'gray.50'}
+      overflow="none"
+    >
       <Div100vh>
         <Box h="full" w="full" p={{ base: 4, md: 8 }} minH="650px">
           <Flex
