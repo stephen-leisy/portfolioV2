@@ -20,6 +20,7 @@ export const ViewModeIconToggle: React.FC<{
 
   return (
     <Box cursor="pointer" zIndex={50}>
+      {darkMode}
       {/* {darkMode ? (
         <SunIcon
           color="gray.50"
