@@ -2,24 +2,11 @@
 
 import { HiOutlineSun, HiOutlineMoon } from 'react-icons/hi';
 import { Box, IconButton } from '@chakra-ui/react';
-import { useEffect } from 'react';
 
 export const ViewModeIconToggle: React.FC<{
   darkMode: boolean;
   onClick: (value: string) => void;
-  theme: string | undefined;
-}> = ({ darkMode, onClick, theme }) => {
-  useEffect(() => {
-    if (theme === 'system') {
-      const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-      onClick(darkMediaQuery.matches ? 'dark' : 'light');
-
-      darkMediaQuery.addEventListener('change', (e) => {
-        onClick(e.matches ? 'dark' : 'light');
-      });
-    }
-  }, [theme, onClick]);
-
+}> = ({ darkMode, onClick }) => {
   console.log('whats going on?: ', darkMode);
 
   return (

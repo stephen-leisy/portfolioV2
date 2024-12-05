@@ -5,6 +5,7 @@ import { navigationConfig } from './navigationConfig';
 import { useRouter, usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
 import { ViewModeIconToggle } from '../ViewModeIconToggle';
+import { useEffect } from 'react';
 
 export const Navigation: React.FC = () => {
   const router = useRouter();
@@ -17,13 +18,20 @@ export const Navigation: React.FC = () => {
     setTheme(theme);
   };
 
+  useEffect(() => {
+    if (theme === 'system') {
+      const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      setTheme(darkMediaQuery.matches ? 'dark' : 'light');
+
+      darkMediaQuery.addEventListener('change', (e) => {
+        setTheme(e.matches ? 'dark' : 'light');
+      });
+    }
+  }, [theme, setTheme]);
+
   return (
     <Flex flexDirection="column" alignItems="flex-end" gap={4}>
-      <ViewModeIconToggle
-        onClick={handleModeClick}
-        darkMode={darkMode}
-        theme={theme}
-      />
+      <ViewModeIconToggle onClick={handleModeClick} darkMode={darkMode} />
       {navigationConfig.map(({ display, link }) => (
         <Text
           key={display}
