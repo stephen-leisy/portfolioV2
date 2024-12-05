@@ -20,6 +20,8 @@ export const ViewModeIconToggle: React.FC<{
     }
   }, [theme, onClick]);
 
+  console.log('whats going on?: ', darkMode);
+
   return (
     <Box cursor="pointer" zIndex={50}>
       {darkMode ? (
