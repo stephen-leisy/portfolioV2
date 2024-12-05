@@ -1,4 +1,4 @@
-import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+// import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { Box } from '@chakra-ui/react';
 import { useEffect } from 'react';
 
@@ -20,7 +20,7 @@ export const ViewModeIconToggle: React.FC<{
 
   return (
     <Box cursor="pointer" zIndex={50}>
-      {darkMode ? (
+      {/* {darkMode ? (
         <SunIcon
           color="gray.50"
           _hover={{
@@ -35,7 +35,7 @@ export const ViewModeIconToggle: React.FC<{
           }}
           onClick={() => onClick('dark')}
         />
-      )}
+      )} */}
     </Box>
   );
 };
