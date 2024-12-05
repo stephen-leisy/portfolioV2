@@ -16,7 +16,7 @@ export const PageTemplate: React.FC<IPageTemplate> = ({
   imgUrl,
   imageWidth = '65%',
 }) => (
-  <Flex flexDirection="column" w="70%" gap={4} pt={{ base: 48, md: 0 }}>
+  <Flex flexDirection="column" w="70%" gap={4} pt={{ base: 72, md: 0 }}>
     <Image
       w={{ base: '80%', md: imageWidth }}
       src={imgUrl}
