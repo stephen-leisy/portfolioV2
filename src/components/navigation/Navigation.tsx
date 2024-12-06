@@ -30,11 +30,11 @@ export const Navigation: React.FC = () => {
   }, [theme, setTheme]);
 
   return (
-    <Flex flexDirection="column" alignItems="flex-end" gap={4}>
-      <ViewModeIconToggle onClick={handleModeClick} darkMode={darkMode} />
+    <Flex flexDirection="column" gap={4}>
       {navigationConfig.map(({ display, link }) => (
         <Text
           key={display}
+          w="fit-content"
           zIndex="40"
           cursor={pathname !== link ? 'pointer' : 'default'}
           onClick={() => router.push(link)}
@@ -50,6 +50,7 @@ export const Navigation: React.FC = () => {
           {display}
         </Text>
       ))}
+      <ViewModeIconToggle onClick={handleModeClick} darkMode={darkMode} />
     </Flex>
   );
 };

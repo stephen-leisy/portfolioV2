@@ -7,8 +7,6 @@ export const ViewModeIconToggle: React.FC<{
   darkMode: boolean;
   onClick: (value: string) => void;
 }> = ({ darkMode, onClick }) => {
-  console.log('whats going on?: ', darkMode);
-
   return (
     <Box cursor="pointer" zIndex={50}>
       {darkMode ? (

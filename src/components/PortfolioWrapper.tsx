@@ -29,29 +29,27 @@ export const PortfolioWrapper: React.FC<{ children: React.ReactNode }> = ({
             p={{ base: 4, md: 8 }}
             color={darkMode ? 'gray.50' : 'gray.800'}
             overflow="scroll"
+            justifyContent="space-between"
+            gap={{ base: 32, lg: 40 }}
           >
             <Flex
-              w={{ base: 'full', md: '70%' }}
               h="full"
-              alignItems={{ base: 'flex-start', md: 'flex-end' }}
-              position="relative"
-              zIndex="30"
+              w="346px"
+              minW="346px"
+              position={{ base: 'absolute', lg: 'relative' }}
+              flexDir="column"
+              gap={8}
+              overflow="scroll"
             >
-              {children}
+              <NameAndTitle />
+              <Navigation />
             </Flex>
             <Flex
               h="full"
-              position={{ base: 'absolute', md: 'relative' }}
-              right={{ base: 8, md: 0 }}
-              w={{ base: '100%', md: '30%' }}
-              flexDir={{ base: 'column-reverse', md: 'column' }}
-              alignItems="flex-end"
-              justifyContent="flex-end"
-              gap={6}
-              overflow="scroll"
+              alignItems={{ base: 'flex-start', lg: 'flex-end' }}
+              zIndex="30"
             >
-              <Navigation />
-              <NameAndTitle />
+              {children}
             </Flex>
           </Flex>
         </Box>
