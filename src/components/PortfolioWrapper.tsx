@@ -3,31 +3,29 @@
 import { Flex, Box } from '@chakra-ui/react';
 import { Navigation } from './navigation/Navigation';
 import { NameAndTitle } from './NameAndTitle';
-import { useTheme } from 'next-themes';
 import Div100vh from 'react-div-100vh';
 
 export const PortfolioWrapper: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const { theme } = useTheme();
-  const darkMode = theme === 'dark';
-
   return (
     <Box
       h="100vh"
       w="100vw"
-      bg={darkMode ? 'gray.800' : 'gray.50'}
+      bg="gray.50"
+      _dark={{ bg: 'gray.800' }}
       overflow="none"
     >
       <Div100vh>
         <Box h="full" w="full" p={{ base: 4, md: 8 }} minH="650px">
           <Flex
             borderWidth={1}
-            borderColor={darkMode ? 'gray.50' : 'gray.700'}
+            borderColor="gray.700"
             h="full"
             w="full"
             p={{ base: 4, md: 8 }}
-            color={darkMode ? 'gray.50' : 'gray.800'}
+            color="gray.800"
+            _dark={{ color: 'gray.50', borderColor: 'gray.50' }}
             overflow="scroll"
             justifyContent="space-between"
             gap={{ base: 32, lg: 40 }}

@@ -3,7 +3,6 @@ import { Poppins } from 'next/font/google';
 import './globals.css';
 import { Providers } from './providers';
 import { PortfolioWrapper } from '@/components/PortfolioWrapper';
-import { ThemeProvider } from 'next-themes';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -25,9 +24,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={poppins.className}>
       <body style={{ overflow: 'hidden' }}>
         <Providers>
-          <ThemeProvider attribute="class">
-            <PortfolioWrapper>{children}</PortfolioWrapper>
-          </ThemeProvider>
+          <PortfolioWrapper>{children}</PortfolioWrapper>
         </Providers>
       </body>
     </html>
