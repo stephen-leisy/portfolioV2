@@ -3,7 +3,6 @@
 import { Flex, Text } from '@chakra-ui/react';
 import { navigationConfig } from './navigationConfig';
 import { useRouter, usePathname } from 'next/navigation';
-import { useTheme } from 'next-themes';
 import { ColorModeButton } from '@/components/ui/color-mode';
 
 export const Navigation: React.FC = () => {
