@@ -37,6 +37,7 @@ export const Navigation: React.FC = () => {
         variant="ghost"
         w="fit-content"
         size="2xs"
+        zIndex={50}
         _hover={{
           bg: 'gray.50',
           color: 'pink.300',
