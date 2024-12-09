@@ -4,10 +4,20 @@ import { Flex, Box } from '@chakra-ui/react';
 import { Navigation } from './navigation/Navigation';
 import { NameAndTitle } from './NameAndTitle';
 import Div100vh from 'react-div-100vh';
+import { useRef, useState } from 'react';
 
 export const PortfolioWrapper: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
+  const [isScrolling, setIsScrolling] = useState(false);
+  const scrollBoxRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = () => {
+    if (scrollBoxRef.current) {
+      if (scrollBoxRef.current.scrollTop === 0) setIsScrolling(false);
+      else setIsScrolling(true);
+    }
+  };
   return (
     <Box
       h="100vh"
@@ -28,18 +38,19 @@ export const PortfolioWrapper: React.FC<{ children: React.ReactNode }> = ({
             _dark={{ color: 'gray.50', borderColor: 'gray.50' }}
             overflow="scroll"
             justifyContent="space-between"
+            ref={scrollBoxRef}
+            onScroll={handleScroll}
             gap={{ base: 32, lg: 40 }}
           >
             <Flex
               h="full"
-              w="346px"
+              w="fit-content"
               minW="346px"
               position={{ base: 'absolute', lg: 'relative' }}
               flexDir="column"
-              gap={8}
-              overflow="scroll"
+              gap={6}
             >
-              <NameAndTitle />
+              <NameAndTitle isScrolling={isScrolling} />
               <Navigation />
             </Flex>
             <Flex
