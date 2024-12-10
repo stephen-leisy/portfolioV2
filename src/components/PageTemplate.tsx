@@ -19,10 +19,9 @@ export const PageTemplate: React.FC<IPageTemplate> = ({
   <Flex
     maxW={{ xl: '860px', '2xl': '1100px' }}
     flexDirection="column"
-    alignItems="flex-end"
-    justifyContent="flex-end"
+    w="60vw"
+    pt={{ base: 72, lg: '20vh' }}
     gap={4}
-    pt={{ base: 72, lg: 0 }}
   >
     <Flex w="full" justifyContent={{ base: 'flex-end', lg: 'flex-start' }}>
       <Image
