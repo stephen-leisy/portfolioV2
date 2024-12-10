@@ -1,12 +1,14 @@
 'use strict';
 
-export const projectConfig: {
+export interface IProjectConfig {
   title: string;
   link: string;
   displayLink: string;
   img1: string;
   img2?: string;
-}[] = [
+}
+
+export const projectConfig: IProjectConfig[] = [
   {
     title: 'BrewMenu (Part of BrewLogix Co-Location App)',
     link: 'https://app.brewlogix.com',
