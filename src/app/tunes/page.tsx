@@ -3,10 +3,11 @@ import { loremIpsum } from '@/utils/loremIpsum';
 
 const page: React.FC = () => (
   <PageTemplate
-    pageName="Playlists Coming Soon"
+    pageName="Tunes Coming Soon"
     columnOne={loremIpsum[0]}
     columnTwo={loremIpsum[1]}
-    imgUrl="https://images.squarespace-cdn.com/content/v1/586b53778419c244de1d3c4a/1595559236219-89MYVO4GR9TYRX64MC5T/red%2Bceiling.jpg"
+    imgUrl="https://i.ibb.co/LznG7VG/9-BA46-C93-486-C-443-B-9-ED3-051-D0914-B948.jpg"
+    imageWidth="55%"
   />
 );
 
