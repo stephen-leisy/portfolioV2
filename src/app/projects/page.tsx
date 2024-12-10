@@ -19,7 +19,7 @@ const page: React.FC = () => (
       Portfolio
     </Text>
     {projectConfig.map(({ title, link, displayLink, img1, img2 }) => (
-      <Flex flexDirection="column" gap={12}>
+      <Flex flexDirection="column" gap={12} key={title + img1}>
         <Flex w="full" gap={4} flexDir={{ base: 'column', lg: 'row' }}>
           <Text
             fontWeight={600}
