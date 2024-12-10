@@ -6,7 +6,7 @@ const page: React.FC = () => (
     maxW={{ xl: '860px', '2xl': '1100px' }}
     w="60vw"
     flexDirection="column"
-    gap={32}
+    gap={16}
     pt={{ base: 72, lg: '20vh' }}
   >
     <Text
@@ -16,10 +16,10 @@ const page: React.FC = () => (
       w="full"
       textAlign={{ base: 'right', lg: 'left' }}
     >
-      Portfolio
+      Projects
     </Text>
     {projectConfig.map(({ title, link, displayLink, img1, img2 }) => (
-      <Flex flexDirection="column" gap={12} key={title + img1}>
+      <Flex flexDirection="column" gap={12} key={title + img1} pb={16}>
         <Flex w="full" gap={4} flexDir={{ base: 'column', lg: 'row' }}>
           <Text
             fontWeight={600}
@@ -45,7 +45,7 @@ const page: React.FC = () => (
         {img2 && <Image w="full" src={img2} />}
       </Flex>
     ))}
-    <Box h={8}></Box>
+    <Box h={2}></Box>
   </Flex>
 );
 
