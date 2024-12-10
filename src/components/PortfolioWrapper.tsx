@@ -46,14 +46,12 @@ export const PortfolioWrapper: React.FC<{ children: React.ReactNode }> = ({
           >
             <Flex
               h="full"
-              w="346px"
-              minW="346px"
+              w="fit-content"
               position="absolute"
-              // position={{ base: 'absolute', lg: 'relative' }}
               flexDir="column"
               gap={6}
             >
-              <NameAndTitle isScrolling={isScrolling} />
+              <NameAndTitle />
               <Navigation />
             </Flex>
             <Flex
