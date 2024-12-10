@@ -23,15 +23,14 @@ export const useScrolledToBottom = (
       if (
         scrollBoxRef.current.scrollHeight - scrollBoxRef.current.scrollTop ===
         scrollBoxRef.current.clientHeight
-      )
+      ) {
         setIsAtBottom(true);
-      else setIsAtBottom(false);
+      } else setIsAtBottom(false);
     }
   };
 
   useEffect(() => {
     if (
-      scrollBoxRef?.current &&
       scrollBoxRef?.current &&
       scrollBoxRef?.current.scrollHeight === scrollBoxRef?.current.clientHeight
     ) {
