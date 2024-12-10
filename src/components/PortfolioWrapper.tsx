@@ -5,12 +5,14 @@ import { Navigation } from './navigation/Navigation';
 import { NameAndTitle } from './NameAndTitle';
 import Div100vh from 'react-div-100vh';
 import { useRef, useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 export const PortfolioWrapper: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [isScrolling, setIsScrolling] = useState(false);
   const scrollBoxRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
 
   const handleScroll = () => {
     if (scrollBoxRef.current) {
@@ -44,9 +46,10 @@ export const PortfolioWrapper: React.FC<{ children: React.ReactNode }> = ({
           >
             <Flex
               h="full"
-              w="fit-content"
+              w="346px"
               minW="346px"
-              position={{ base: 'absolute', lg: 'relative' }}
+              position="absolute"
+              // position={{ base: 'absolute', lg: 'relative' }}
               flexDir="column"
               gap={6}
             >
@@ -55,7 +58,12 @@ export const PortfolioWrapper: React.FC<{ children: React.ReactNode }> = ({
             </Flex>
             <Flex
               h="full"
-              alignItems={{ base: 'flex-start', lg: 'flex-end' }}
+              w="full"
+              justifyContent="flex-end"
+              alignItems={{
+                base: 'flex-start',
+                lg: pathname !== '/projects' ? 'flex-end' : 'flex-start',
+              }}
               zIndex="30"
             >
               {children}

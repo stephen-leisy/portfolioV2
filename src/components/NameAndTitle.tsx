@@ -8,7 +8,7 @@ export const NameAndTitle: React.FC<{ isScrolling: boolean }> = ({
       Stephen Leisy
     </Text>
     <Text
-      fontWeight={isScrolling ? 500 : 300}
+      fontWeight={{ base: isScrolling ? 500 : 300, lg: 300 }}
       fontSize={{ base: 'sm', md: 'md' }}
       zIndex="40"
     >

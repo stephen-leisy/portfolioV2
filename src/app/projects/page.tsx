@@ -1,13 +1,52 @@
-import { PageTemplate } from '@/components/PageTemplate';
-import { loremIpsum } from '@/utils/loremIpsum';
+import { Flex, Text, Image, Link, Box } from '@chakra-ui/react';
+import { projectConfig } from '@/components/portfolioProjectConfig';
 
 const page: React.FC = () => (
-  <PageTemplate
-    pageName="Projects Coming Soon"
-    columnOne={loremIpsum[0]}
-    columnTwo={loremIpsum[1]}
-    imgUrl="https://www.thedailybeast.com/resizer/v2/PQTI2DXG5VJ55KQARUV6QUYXSQ.jpg?smart=true&auth=367fe58349f6fa5b56551ab39f4ca0e94dc0fe3bb8f6cfa3a99f58b912fe2ed4&width=2560&height=1440"
-  />
+  <Flex
+    maxW={{ xl: '860px', '2xl': '1100px' }}
+    w="60vw"
+    flexDirection="column"
+    gap={32}
+    pt={{ base: 72, lg: '20vh' }}
+  >
+    <Text
+      fontWeight={700}
+      fontSize="xl"
+      my={2}
+      w="full"
+      textAlign={{ base: 'right', lg: 'left' }}
+    >
+      Portfolio
+    </Text>
+    {projectConfig.map(({ title, link, displayLink, img1, img2 }) => (
+      <Flex flexDirection="column" gap={12}>
+        <Flex w="full" gap={4} flexDir={{ base: 'column', lg: 'row' }}>
+          <Text
+            fontWeight={600}
+            color="pink.300"
+            textAlign={{ base: 'right', lg: 'left' }}
+          >
+            {title}
+          </Text>
+          <Text display={{ base: 'none', lg: 'block' }}>|</Text>
+          <Text textAlign={{ base: 'right', lg: 'left' }}>
+            <Link
+              color="gray.500"
+              _dark={{ color: 'gray.100' }}
+              href={link}
+              target="blank"
+              w="fit-content"
+            >
+              {displayLink}
+            </Link>
+          </Text>
+        </Flex>
+        <Image w="full" src={img1} />
+        {img2 && <Image w="full" src={img2} />}
+      </Flex>
+    ))}
+    <Box h={8}></Box>
+  </Flex>
 );
 
 export default page;
