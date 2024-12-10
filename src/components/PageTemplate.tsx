@@ -20,7 +20,7 @@ export const PageTemplate: React.FC<IPageTemplate> = ({
     maxW={{ xl: '860px', '2xl': '1100px' }}
     flexDirection="column"
     w="60vw"
-    pt={{ base: 72, lg: '20vh' }}
+    pt={{ base: 72, lg: 0 }}
     gap={4}
   >
     <Flex w="full" justifyContent={{ base: 'flex-end', lg: 'flex-start' }}>
