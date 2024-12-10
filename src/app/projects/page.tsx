@@ -20,7 +20,7 @@ const page: React.FC = () => (
       Projects
     </Text>
     {projectConfig.map((props) => (
-      <ProjectCard {...props} />
+      <ProjectCard {...props} key={props.title + props.img1} />
     ))}
     <Box h={2}></Box>
   </Flex>

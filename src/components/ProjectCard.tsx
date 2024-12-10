@@ -12,7 +12,6 @@ export const ProjectCard: React.FC<IProjectConfig> = ({
   <Flex
     flexDirection="column"
     gap={{ base: 4, lg: 8 }}
-    key={title + img1}
     pb={16}
     bg="gray.100"
     p={{ base: 4, lg: 8 }}
