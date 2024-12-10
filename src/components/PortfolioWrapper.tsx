@@ -4,22 +4,18 @@ import { Flex, Box } from '@chakra-ui/react';
 import { Navigation } from './navigation/Navigation';
 import { NameAndTitle } from './NameAndTitle';
 import Div100vh from 'react-div-100vh';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { usePathname } from 'next/navigation';
+import { useScrolledToBottom } from '@/utils/useScrolledToBottom';
+import { HiArrowSmDown } from 'react-icons/hi';
 
 export const PortfolioWrapper: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [isScrolling, setIsScrolling] = useState(false);
-  const scrollBoxRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
+  const scrollBoxRef = useRef<HTMLDivElement>(null);
+  const { handleScroll, isAtBottom } = useScrolledToBottom(scrollBoxRef);
 
-  const handleScroll = () => {
-    if (scrollBoxRef.current) {
-      if (scrollBoxRef.current.scrollTop === 0) setIsScrolling(false);
-      else setIsScrolling(true);
-    }
-  };
   return (
     <Box
       h="100vh"
@@ -64,6 +60,18 @@ export const PortfolioWrapper: React.FC<{ children: React.ReactNode }> = ({
               }}
               zIndex="30"
             >
+              {!isAtBottom && (
+                <Box
+                  position="absolute"
+                  animationName="slide-to-bottom-full"
+                  style={{
+                    animation:
+                      'slide-to-bottom-full 1s ease-in-out infinite alternate',
+                  }}
+                >
+                  <HiArrowSmDown />
+                </Box>
+              )}
               {children}
             </Flex>
           </Flex>

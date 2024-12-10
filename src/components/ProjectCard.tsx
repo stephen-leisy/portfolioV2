@@ -16,7 +16,7 @@ export const ProjectCard: React.FC<IProjectConfig> = ({
     pb={16}
     bg="gray.100"
     p={{ base: 4, lg: 8 }}
-    borderRadius="xl"
+    borderRadius="lg"
     _dark={{ bg: 'gray.700' }}
   >
     <Flex
@@ -45,7 +45,7 @@ export const ProjectCard: React.FC<IProjectConfig> = ({
         </Link>
       </Text>
     </Flex>
-    <Image w="full" src={img1} />
-    {img2 && <Image w="full" src={img2} />}
+    <Image borderRadius="lg" w="full" src={img1} />
+    {img2 && <Image borderRadius="lg" w="full" src={img2} />}
   </Flex>
 );
