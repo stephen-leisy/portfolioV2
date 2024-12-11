@@ -10,11 +10,11 @@ export const NameAndTitle: React.FC = () => (
     bg={{ base: 'gray.50', lg: 'none' }}
     _dark={{ borderColor: 'gray.100', bg: { base: 'gray.800', lg: 'none' } }}
   >
-    <Text zIndex="40" fontSize={{ base: 28, md: 40 }} fontWeight={300}>
+    <Text zIndex="40" fontSize={{ base: 26, md: 40 }} fontWeight={300}>
       Stephen Leisy
     </Text>
-    <Text fontWeight={300} fontSize={{ base: 'sm', md: 'md' }} zIndex="40">
-      Full-Stack Software Developer | UX Designer
+    <Text fontWeight={300} fontSize={{ base: 'xs', md: 'md' }} zIndex="40">
+      Software Engineer | UX Designer
     </Text>
   </Flex>
 );

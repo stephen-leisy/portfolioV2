@@ -28,4 +28,10 @@ export const projectConfig: IProjectConfig[] = [
     img1: 'https://i.ibb.co/VmwqHjz/socketjockey-demo-2.gif',
     img2: 'https://i.ibb.co/Ldh3vDN/socket-jockey-demo-1.gif',
   },
+  {
+    title: 'Dash Comm Mobile App',
+    link: 'https://apps.apple.com/us/app/dashcomm/id1619369014',
+    displayLink: 'apps.apple.com/dashcomm',
+    img1: 'https://i.ibb.co/3F9VkkR/Screen-Shot-2024-11-06-at-9-48-28-AM.png',
+  },
 ];

@@ -28,6 +28,7 @@ export const PageTemplate: React.FC<IPageTemplate> = ({
         w={{ base: '80%', md: imageWidth }}
         src={imgUrl}
         alt="images for portfolio site"
+        loading="lazy"
       />
     </Flex>
     <Box>

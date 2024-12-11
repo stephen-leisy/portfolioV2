@@ -44,7 +44,9 @@ export const ProjectCard: React.FC<IProjectConfig> = ({
         </Link>
       </Text>
     </Flex>
-    <Image borderRadius="lg" w="full" src={img1} alt={img1} />
-    {img2 && <Image borderRadius="lg" w="full" src={img2} alt={img2} />}
+    <Image borderRadius="lg" w="full" src={img1} alt={img1} loading="lazy" />
+    {img2 && (
+      <Image borderRadius="lg" w="full" src={img2} alt={img2} loading="lazy" />
+    )}
   </Flex>
 );

@@ -21,8 +21,9 @@ export const useScrolledToBottom = (
   const handleScroll = () => {
     if (scrollBoxRef?.current) {
       if (
-        scrollBoxRef.current.scrollHeight - scrollBoxRef.current.scrollTop ===
-        scrollBoxRef.current.clientHeight
+        Math.trunc(
+          scrollBoxRef.current.scrollHeight - scrollBoxRef.current.scrollTop
+        ) === scrollBoxRef.current.clientHeight
       ) {
         setIsAtBottom(true);
       } else setIsAtBottom(false);
