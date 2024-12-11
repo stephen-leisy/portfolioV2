@@ -3,7 +3,6 @@
 import { Flex, Box } from '@chakra-ui/react';
 import { Navigation } from './navigation/Navigation';
 import { NameAndTitle } from './NameAndTitle';
-import Div100vh from 'react-div-100vh';
 import { useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { useScrolledToBottom } from '@/utils/useScrolledToBottom';
