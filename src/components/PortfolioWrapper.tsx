@@ -18,65 +18,66 @@ export const PortfolioWrapper: React.FC<{ children: React.ReactNode }> = ({
 
   return (
     <Box
-      h="100vh"
+      h="calc(100vh)"
+      minH="100vh"
       w="100vw"
       bg="gray.50"
       _dark={{ bg: 'gray.800' }}
       overflow="none"
+      p={{ base: 4, md: 8 }}
     >
-      <Div100vh>
-        <Box h="full" w="full" p={{ base: 4, md: 8 }} minH="650px">
-          <Flex
-            borderWidth={1}
-            borderColor="gray.700"
-            h="full"
-            w="full"
-            p={{ base: 4, md: 8 }}
-            color="gray.800"
-            _dark={{ color: 'gray.50', borderColor: 'gray.50' }}
-            overflow="scroll"
-            justifyContent="space-between"
-            ref={scrollBoxRef}
-            onScroll={handleScroll}
-            gap={{ base: 32, lg: 40 }}
-          >
-            <Flex
-              h="full"
-              w="fit-content"
+      <Flex
+        borderWidth={1}
+        borderColor="gray.700"
+        h="full"
+        w="full"
+        p={{ base: 4, md: 8 }}
+        color="gray.800"
+        _dark={{ color: 'gray.50', borderColor: 'gray.50' }}
+        overflow="scroll"
+        justifyContent="space-between"
+        ref={scrollBoxRef}
+        onScroll={handleScroll}
+        gap={{ base: 32, lg: 40 }}
+      >
+        <Flex
+          h="full"
+          w="fit-content"
+          position="absolute"
+          flexDir="column"
+          gap={6}
+        >
+          <NameAndTitle />
+          <Navigation />
+        </Flex>
+        <Flex
+          h="full"
+          w="full"
+          justifyContent="flex-end"
+          alignItems={{
+            base: 'flex-start',
+            lg: pathname !== '/projects' ? 'flex-end' : 'flex-start',
+          }}
+          zIndex="30"
+        >
+          {!isAtBottom && (
+            <Box
               position="absolute"
-              flexDir="column"
-              gap={6}
-            >
-              <NameAndTitle />
-              <Navigation />
-            </Flex>
-            <Flex
-              h="full"
-              w="full"
-              justifyContent="flex-end"
-              alignItems={{
-                base: 'flex-start',
-                lg: pathname !== '/projects' ? 'flex-end' : 'flex-start',
+              animationName="slide-to-bottom-full"
+              style={{
+                animation:
+                  'slide-to-bottom-full 1s ease-in-out infinite alternate',
               }}
-              zIndex="30"
             >
-              {!isAtBottom && (
-                <Box
-                  position="absolute"
-                  animationName="slide-to-bottom-full"
-                  style={{
-                    animation:
-                      'slide-to-bottom-full 1s ease-in-out infinite alternate',
-                  }}
-                >
-                  <HiArrowSmDown />
-                </Box>
-              )}
-              {children}
-            </Flex>
-          </Flex>
-        </Box>
-      </Div100vh>
+              <HiArrowSmDown />
+            </Box>
+          )}
+          <Box>
+            {children}
+            {isAtBottom && <Box h={{ base: 8, lg: 0 }} />}
+          </Box>
+        </Flex>
+      </Flex>
     </Box>
   );
 };
