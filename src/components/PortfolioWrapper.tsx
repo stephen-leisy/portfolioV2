@@ -56,9 +56,9 @@ export const PortfolioWrapper: React.FC<{ children: React.ReactNode }> = ({
             w="full"
             justifyContent="flex-end"
             alignItems={{
-              base: 'flex-start',
+              base: pathname === '/links' ? 'flex-end' : 'flex-start',
               lg:
-                pathname === '/' || pathname === '/resume'
+                pathname === '/' || pathname === '/links'
                   ? 'flex-end'
                   : 'flex-start',
             }}
@@ -76,10 +76,7 @@ export const PortfolioWrapper: React.FC<{ children: React.ReactNode }> = ({
                 <HiArrowSmDown />
               </Box>
             )}
-            <Box>
-              {children}
-              {isAtBottom && <Box h={{ base: 8, lg: 0 }} />}
-            </Box>
+            {children}
           </Flex>
         </Flex>
       </Box>

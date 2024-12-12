@@ -15,8 +15,8 @@ export const navigationConfig: INavigationConfig[] = [
     link: '/projects',
   },
   {
-    display: 'Resume',
-    link: '/resume',
+    display: 'Links',
+    link: '/links',
   },
   {
     display: 'Tunes',
