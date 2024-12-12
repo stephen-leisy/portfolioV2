@@ -1,5 +1,4 @@
 import { PageWrapper } from '@/components/PageWrapper';
-import { TunesIframe } from '@/components/TunesIframe';
 import { Box, Text } from '@chakra-ui/react';
 import { tunesConfig } from '@/configs/tunesConfig';
 import { ProjectCard } from '@/components/ProjectCard';
