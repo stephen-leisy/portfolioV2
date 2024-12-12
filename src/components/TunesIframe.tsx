@@ -1,12 +1,12 @@
 'use client';
-import { ITunesConfig } from '@/configs/tunesConfig';
+import { IProjectConfig } from '@/configs/portfolioProjectConfig';
 import { Box, Flex, Text } from '@chakra-ui/react';
 
-export const TunesIframe: React.FC<ITunesConfig> = ({
-  source,
-  bandName,
-  songName,
-  songLink,
+export const TunesIframe: React.FC<IProjectConfig> = ({
+  iframeSource,
+  title,
+  linkDisplayTitle,
+  link,
 }) => (
   <Box>
     <Flex
@@ -17,19 +17,24 @@ export const TunesIframe: React.FC<ITunesConfig> = ({
       gap={4}
     >
       <Text color="pink.400" _dark={{ color: 'pink.300' }}>
-        {bandName}
+        {title}
       </Text>
-      ·
+      <Text display={{ base: 'none', lg: 'block' }}>|</Text>
       <a
-        href={songLink}
+        href={link}
         title="Life Is But A Dream"
         target="_blank"
         style={{ textDecoration: 'none' }}
       >
-        {songName}
+        {linkDisplayTitle}
       </a>
     </Flex>
 
-    <iframe width="100%" height="166" allow="autoplay" src={source}></iframe>
+    <iframe
+      width="100%"
+      height="166"
+      allow="autoplay"
+      src={iframeSource}
+    ></iframe>
   </Box>
 );

@@ -6,8 +6,9 @@ export const ProjectCard: React.FC<IProjectConfig> = ({
   title,
   img1,
   link,
-  displayLink,
+  linkDisplayTitle,
   img2,
+  iframeSource,
 }) => (
   <Flex
     flexDirection="column"
@@ -40,13 +41,23 @@ export const ProjectCard: React.FC<IProjectConfig> = ({
           target="blank"
           w="fit-content"
         >
-          {displayLink}
+          {linkDisplayTitle}
         </Link>
       </Text>
     </Flex>
-    <Image borderRadius="lg" w="full" src={img1} alt={img1} loading="lazy" />
+    {img1 && (
+      <Image borderRadius="lg" w="full" src={img1} alt={img1} loading="lazy" />
+    )}
     {img2 && (
       <Image borderRadius="lg" w="full" src={img2} alt={img2} loading="lazy" />
+    )}
+    {iframeSource && (
+      <iframe
+        width="100%"
+        height="166"
+        allow="autoplay"
+        src={iframeSource}
+      ></iframe>
     )}
   </Flex>
 );

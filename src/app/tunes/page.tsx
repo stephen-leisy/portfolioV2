@@ -2,6 +2,7 @@ import { PageWrapper } from '@/components/PageWrapper';
 import { TunesIframe } from '@/components/TunesIframe';
 import { Box, Text } from '@chakra-ui/react';
 import { tunesConfig } from '@/configs/tunesConfig';
+import { ProjectCard } from '@/components/ProjectCard';
 
 const page: React.FC = () => (
   <PageWrapper header="Tunes">
@@ -14,7 +15,8 @@ const page: React.FC = () => (
       from bands I've been in.
     </Text>
     {tunesConfig.map((props) => (
-      <TunesIframe {...props} key={props.source} />
+      <ProjectCard {...props} key={props.iframeSource} />
+      // <TunesIframe {...props} key={props.source} />
     ))}
     <Box h={2}></Box>
   </PageWrapper>
