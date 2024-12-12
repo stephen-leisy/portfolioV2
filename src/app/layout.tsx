@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className={poppins.className}>
-      <body style={{ overflow: 'hidden' }}>
+      <body style={{ width: '100%', height: '100%' }}>
         <Providers>
           <PortfolioWrapper>{children}</PortfolioWrapper>
         </Providers>
