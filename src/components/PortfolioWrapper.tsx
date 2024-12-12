@@ -57,7 +57,10 @@ export const PortfolioWrapper: React.FC<{ children: React.ReactNode }> = ({
             justifyContent="flex-end"
             alignItems={{
               base: 'flex-start',
-              lg: pathname !== '/projects' ? 'flex-end' : 'flex-start',
+              lg:
+                pathname === '/' || pathname === '/resume'
+                  ? 'flex-end'
+                  : 'flex-start',
             }}
             zIndex="30"
           >

@@ -1,14 +1,23 @@
-import { PageTemplate } from '@/components/PageTemplate';
-import { loremIpsum } from '@/utils/loremIpsum';
+import { PageWrapper } from '@/components/PageWrapper';
+import { TunesIframe } from '@/components/TunesIframe';
+import { Box, Text } from '@chakra-ui/react';
+import { tunesConfig } from '@/configs/tunesConfig';
 
 const page: React.FC = () => (
-  <PageTemplate
-    pageName="Tunes Coming Soon"
-    columnOne={loremIpsum[0]}
-    columnTwo={loremIpsum[1]}
-    imgUrl="https://i.ibb.co/LznG7VG/9-BA46-C93-486-C-443-B-9-ED3-051-D0914-B948.jpg"
-    imageWidth="45%"
-  />
+  <PageWrapper header="Tunes">
+    <Text fontSize="xs" fontWeight={500}>
+      Outside of development & design, music holds one of the largest spots in
+      my heart. I've been playing in bands, touring in ancient vans (not so much
+      these days, tho), and recording/producing/mixing songs since I was a
+      teenager and am still gigging around town in Portland, OR with my current
+      project 'Sherbet Tone'. Here's a sampling of some of my favorite tunes
+      from bands I've been in.
+    </Text>
+    {tunesConfig.map((props) => (
+      <TunesIframe {...props} key={props.source} />
+    ))}
+    <Box h={2}></Box>
+  </PageWrapper>
 );
 
 export default page;

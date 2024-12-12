@@ -1,29 +1,15 @@
-import { Flex, Text, Box } from '@chakra-ui/react';
-import { projectConfig } from '@/components/portfolioProjectConfig';
+import { Box } from '@chakra-ui/react';
+import { projectConfig } from '@/configs/portfolioProjectConfig';
 import { ProjectCard } from '@/components/ProjectCard';
+import { PageWrapper } from '@/components/PageWrapper';
 
 const page: React.FC = () => (
-  <Flex
-    maxW={{ xl: '860px', '2xl': '1100px' }}
-    w="60vw"
-    flexDirection="column"
-    gap={{ base: 12, md: 16 }}
-    pt={{ base: 72, lg: '20vh' }}
-  >
-    <Text
-      fontWeight={700}
-      fontSize={{ base: 'lg', lg: 'xl' }}
-      my={2}
-      w="full"
-      textAlign={{ base: 'right', lg: 'left' }}
-    >
-      Projects
-    </Text>
+  <PageWrapper header="Projects">
     {projectConfig.map((props) => (
       <ProjectCard {...props} key={props.title + props.img1} />
     ))}
     <Box h={2}></Box>
-  </Flex>
+  </PageWrapper>
 );
 
 export default page;
