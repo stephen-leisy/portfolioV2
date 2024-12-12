@@ -9,7 +9,7 @@ const linksConfig = [
 const page: React.FC = () => (
   <Flex flexDirection="column" gap={2}>
     {linksConfig.map(({ link, title }) => (
-      <Text textAlign="right" fontWeight={500}>
+      <Text textAlign="right" fontWeight={500} key={title}>
         <Link
           color="gray.500"
           _dark={{ color: 'gray.100' }}
