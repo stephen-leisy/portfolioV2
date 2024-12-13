@@ -2,10 +2,7 @@
 import { Image, Skeleton } from '@chakra-ui/react';
 import { useState } from 'react';
 
-export const MainImage: React.FC<{ imageWidth: string; imgUrl: string }> = ({
-  imageWidth,
-  imgUrl,
-}) => {
+export const MainImage: React.FC<{ imgUrl: string }> = ({ imgUrl }) => {
   const [imageIsLoaded, setImageIsLoaded] = useState<boolean>(false);
 
   const handleImageLoad = () => setImageIsLoaded(true);
@@ -13,7 +10,8 @@ export const MainImage: React.FC<{ imageWidth: string; imgUrl: string }> = ({
   return (
     <Skeleton loading={!imageIsLoaded}>
       <Image
-        w={{ base: '80%', lg: imageWidth }}
+        w={{ base: '60vw', lg: '32vw' }}
+        maxW="600px"
         src={imgUrl}
         alt="images for portfolio site"
         loading="lazy"

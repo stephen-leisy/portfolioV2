@@ -7,7 +7,6 @@ interface IPageTemplate {
   columnOne: string;
   columnTwo: string;
   imgUrl: string;
-  imageWidth?: string;
 }
 
 export const PageTemplate: React.FC<IPageTemplate> = ({
@@ -15,7 +14,6 @@ export const PageTemplate: React.FC<IPageTemplate> = ({
   columnOne,
   columnTwo,
   imgUrl,
-  imageWidth = '65%',
 }) => (
   <Flex
     maxW={{ xl: '860px', '2xl': '1100px' }}
@@ -25,7 +23,7 @@ export const PageTemplate: React.FC<IPageTemplate> = ({
     gap={4}
   >
     <Flex w="full" justifyContent={{ base: 'flex-end', lg: 'flex-start' }}>
-      <MainImage imageWidth={imageWidth} imgUrl={imgUrl} />
+      <MainImage imgUrl={imgUrl} />
     </Flex>
     <Box>
       <Text
