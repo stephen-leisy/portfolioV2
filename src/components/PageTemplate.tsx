@@ -27,7 +27,7 @@ export const PageTemplate: React.FC<IPageTemplate> = ({
   >
     <Flex w="full" justifyContent={{ base: 'flex-end', lg: 'flex-start' }}>
       <Image
-        w={{ base: '80%', md: imageWidth }}
+        w={{ base: '80%', lg: imageWidth }}
         src={imgUrl}
         alt="images for portfolio site"
         loading="lazy"
