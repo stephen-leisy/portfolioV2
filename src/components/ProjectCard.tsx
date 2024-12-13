@@ -14,12 +14,13 @@ export const ProjectCard: React.FC<IProjectConfig> = ({
   const [imageIsLoaded, setImageIsLoaded] = useState<boolean>(false);
   const [secondImageIsLoaded, setSecondImageIsLoaded] =
     useState<boolean>(false);
+
   return (
     <Flex
       flexDirection="column"
       gap={{ base: 4, lg: 8 }}
       pb={16}
-      bg="gray.100"
+      bg="gray.200"
       p={{ base: 4, lg: 8 }}
       borderRadius="lg"
       _dark={{ bg: 'gray.700' }}

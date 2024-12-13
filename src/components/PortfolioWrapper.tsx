@@ -23,7 +23,7 @@ export const PortfolioWrapper: React.FC<{ children: React.ReactNode }> = ({
         minH="350px"
         w="100vw"
         bg="gray.50"
-        _dark={{ bg: 'gray.800' }}
+        _dark={{ bg: 'gray.900' }}
         overflow="none"
         p={{ base: 4, md: 8 }}
       >
