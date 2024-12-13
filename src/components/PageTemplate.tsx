@@ -7,7 +7,6 @@ interface IPageTemplate {
   columnTwo: string;
   imgUrl: string;
   imageWidth?: string;
-  addLinkLine?: boolean;
 }
 
 export const PageTemplate: React.FC<IPageTemplate> = ({
@@ -16,7 +15,6 @@ export const PageTemplate: React.FC<IPageTemplate> = ({
   columnTwo,
   imgUrl,
   imageWidth = '65%',
-  addLinkLine = false,
 }) => (
   <Flex
     maxW={{ xl: '860px', '2xl': '1100px' }}
@@ -31,6 +29,7 @@ export const PageTemplate: React.FC<IPageTemplate> = ({
         src={imgUrl}
         alt="images for portfolio site"
         loading="lazy"
+        borderRadius="xl"
       />
     </Flex>
     <Box>
@@ -44,7 +43,7 @@ export const PageTemplate: React.FC<IPageTemplate> = ({
         {pageName}
       </Text>
       <Flex
-        gap={5}
+        gap={8}
         flexDirection={{ base: 'column', lg: 'row' }}
         alignItems={{ base: 'flex-end', lg: 'flex-start' }}
       >
@@ -63,18 +62,6 @@ export const PageTemplate: React.FC<IPageTemplate> = ({
           fontWeight={500}
         >
           {columnTwo}
-          {addLinkLine && (
-            <Link
-              display="block"
-              w="fit-content"
-              mt={2}
-              href="https://github.com/stephen-leisy/portfolioV2"
-              target="blank"
-              _hover={{ color: 'pink.300' }}
-            >
-              The code for this site lives here.
-            </Link>
-          )}
         </Text>
       </Flex>
     </Box>
