@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Image, Flex, Box } from '@chakra-ui/react';
+import { Text, Image, Flex, Box, Link } from '@chakra-ui/react';
 
 interface IPageTemplate {
   pageName: string;
@@ -7,6 +7,7 @@ interface IPageTemplate {
   columnTwo: string;
   imgUrl: string;
   imageWidth?: string;
+  addLinkLine?: boolean;
 }
 
 export const PageTemplate: React.FC<IPageTemplate> = ({
@@ -15,6 +16,7 @@ export const PageTemplate: React.FC<IPageTemplate> = ({
   columnTwo,
   imgUrl,
   imageWidth = '65%',
+  addLinkLine = false,
 }) => (
   <Flex
     maxW={{ xl: '860px', '2xl': '1100px' }}
@@ -61,6 +63,17 @@ export const PageTemplate: React.FC<IPageTemplate> = ({
           fontWeight={500}
         >
           {columnTwo}
+          {addLinkLine && (
+            <Link
+              display="block"
+              mt={2}
+              href="https://github.com/stephen-leisy/portfolioV2"
+              target="blank"
+              _hover={{ color: 'pink.300' }}
+            >
+              The code for this site lives here.
+            </Link>
+          )}
         </Text>
       </Flex>
     </Box>
