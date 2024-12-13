@@ -8,7 +8,7 @@ const page: React.FC = () => (
     {projectConfig.map((props) => (
       <ProjectCard {...props} key={props.title + props.img1} />
     ))}
-    <Box h={2}></Box>
+    <Box h={2} />
   </PageWrapper>
 );
 

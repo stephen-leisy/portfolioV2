@@ -1,7 +1,7 @@
 'use client';
 
 import { Flex, Text } from '@chakra-ui/react';
-import { navigationConfig } from './navigationConfig';
+import { navigationConfig } from '../configs/navigationConfig';
 import { useRouter, usePathname } from 'next/navigation';
 import { ColorModeButton } from '@/components/ui/color-mode';
 
@@ -11,9 +11,9 @@ export const Navigation: React.FC = () => {
 
   return (
     <Flex flexDirection="column" gap={4}>
-      {navigationConfig.map(({ display, link }) => (
+      {navigationConfig.map(({ displayTitle, link }) => (
         <Text
-          key={display}
+          key={displayTitle}
           w="fit-content"
           zIndex="40"
           cursor={pathname !== link ? 'pointer' : 'default'}
@@ -30,7 +30,7 @@ export const Navigation: React.FC = () => {
           }}
           fontSize={{ base: 'sm', md: 'md' }}
         >
-          {display}
+          {displayTitle}
         </Text>
       ))}
       <ColorModeButton

@@ -1,25 +1,22 @@
 'use strict';
 
-interface INavigationConfig {
-  display: string;
-  link: string;
-}
+import { INavigationConfig } from './config-types/navigationConfigTypes';
 
 export const navigationConfig: INavigationConfig[] = [
   {
-    display: 'Home',
+    displayTitle: 'Home',
     link: '/',
   },
   {
-    display: 'Projects',
+    displayTitle: 'Projects',
     link: '/projects',
   },
   {
-    display: 'Links',
+    displayTitle: 'Links',
     link: '/links',
   },
   {
-    display: 'Tunes',
+    displayTitle: 'Tunes',
     link: '/tunes',
   },
 ];

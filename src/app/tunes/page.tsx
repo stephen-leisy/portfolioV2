@@ -15,9 +15,8 @@ const page: React.FC = () => (
     </Text>
     {tunesConfig.map((props) => (
       <ProjectCard {...props} key={props.iframeSource} />
-      // <TunesIframe {...props} key={props.source} />
     ))}
-    <Box h={2}></Box>
+    <Box h={2} />
   </PageWrapper>
 );
 

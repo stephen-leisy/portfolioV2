@@ -1,6 +1,6 @@
 'use strict';
 
-import { IProjectConfig } from './portfolioProjectConfig';
+import { IProjectConfig } from './config-types/projectConfigTypes';
 
 export const tunesConfig: IProjectConfig[] = [
   {
@@ -19,7 +19,7 @@ export const tunesConfig: IProjectConfig[] = [
   },
   {
     title: 'Genders',
-    linkDisplayTitle: 'The World Slips Away',
+    linkDisplayTitle: 'The World Fades Away',
     link: 'https://soundcloud.com/genderspdx/world-fades-away',
     iframeSource:
       'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/995110006&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',

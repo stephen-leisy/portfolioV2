@@ -27,7 +27,6 @@ export const PageWrapper: React.FC<{
         {header}
       </Text>
     )}
-
     {children}
   </Flex>
 );

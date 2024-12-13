@@ -1,6 +1,6 @@
 'use client';
+import { IProjectConfig } from '@/configs/config-types/projectConfigTypes';
 import { Flex, Text, Image, Link } from '@chakra-ui/react';
-import { IProjectConfig } from '../configs/portfolioProjectConfig';
 
 export const ProjectCard: React.FC<IProjectConfig> = ({
   title,

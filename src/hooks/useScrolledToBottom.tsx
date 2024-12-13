@@ -8,6 +8,10 @@ import {
 } from 'react';
 import { usePathname } from 'next/navigation';
 
+/**
+ * Custom hook utilizing useRef to determine if a scrollable div has reached the bottom of its content
+ * @param scrollBoxRef The ref associated with a scrollable div
+ */
 export const useScrolledToBottom = (
   scrollBoxRef: RefObject<HTMLDivElement>
 ): {
@@ -16,8 +20,9 @@ export const useScrolledToBottom = (
   isAtBottom: boolean;
 } => {
   const pathname = usePathname();
-  const [isAtBottom, setIsAtBottom] = useState(false);
+  const [isAtBottom, setIsAtBottom] = useState<boolean>(false);
 
+  // Function that listens onScroll and if user has reached the bottom of the scrollable div we set 'isAtBottom' to true, otherwise 'isAtBottom' is set to false
   const handleScroll = () => {
     if (scrollBoxRef?.current) {
       if (
@@ -30,6 +35,10 @@ export const useScrolledToBottom = (
     }
   };
 
+  /**
+   * This use effect runs when pathname changes. Since this hook is used within the Next.js layout page, we are not rerendering the nav bar when the user clicks to navigate to other pages.
+   * This is ideal that the nav bar only renders once, but means that we need to listen for router changes to reset the 'isAtBottom' boolean.
+   */
   useEffect(() => {
     if (
       scrollBoxRef?.current &&

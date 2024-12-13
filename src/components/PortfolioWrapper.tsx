@@ -1,11 +1,11 @@
 'use client';
 
 import { Flex, Box } from '@chakra-ui/react';
-import { Navigation } from './navigation/Navigation';
+import { Navigation } from './Navigation';
 import { NameAndTitle } from './NameAndTitle';
 import { useRef } from 'react';
 import { usePathname } from 'next/navigation';
-import { useScrolledToBottom } from '@/utils/useScrolledToBottom';
+import { useScrolledToBottom } from '@/hooks/useScrolledToBottom';
 import { HiArrowSmDown } from 'react-icons/hi';
 import Div100vh from 'react-div-100vh';
 
@@ -67,7 +67,6 @@ export const PortfolioWrapper: React.FC<{ children: React.ReactNode }> = ({
             {!isAtBottom && (
               <Box
                 position="absolute"
-                animationName="slide-to-bottom-full"
                 style={{
                   animation:
                     'slide-to-bottom-full 1s ease-in-out infinite alternate',

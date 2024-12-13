@@ -1,29 +1,24 @@
-import { Text, Flex, Link } from '@chakra-ui/react';
-
-const linksConfig = [
-  { link: 'https://www.linkedin.com/in/stephen-leisy/', title: 'Linkedin' },
-  { link: 'https://github.com/stephen-leisy', title: 'Github' },
-  { link: 'mailto:stleisy@gmail.com', title: 'Email (stleisy@gmail.com)' },
-];
+import { linksConfig } from '@/configs/linksConfig';
+import { Flex, Link } from '@chakra-ui/react';
 
 const page: React.FC = () => (
-  <Flex flexDirection="column" gap={2}>
-    {linksConfig.map(({ link, title }) => (
-      <Text textAlign="right" fontWeight={500} key={title}>
-        <Link
-          color="gray.500"
-          _dark={{ color: 'gray.100' }}
-          href={link}
-          target="blank"
-          w="fit-content"
-          textDecoration="none"
-          _hover={{
-            color: 'pink.300',
-          }}
-        >
-          {title}
-        </Link>
-      </Text>
+  <Flex flexDirection="column" alignItems="flex-end" gap={2}>
+    {linksConfig.map(({ link, displayTitle }) => (
+      <Link
+        color="gray.800"
+        _dark={{ color: 'gray.100' }}
+        href={link}
+        target="blank"
+        w="fit-content"
+        textDecoration="none"
+        fontWeight={500}
+        key={displayTitle}
+        _hover={{
+          color: 'pink.300',
+        }}
+      >
+        {displayTitle}
+      </Link>
     ))}
   </Flex>
 );
