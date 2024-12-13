@@ -1,7 +1,7 @@
 'use client';
 import { IProjectConfig } from '@/configs/config-types/projectConfigTypes';
 import { Flex, Text, Image, Link, Skeleton } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export const ProjectCard: React.FC<IProjectConfig> = ({
   title,
@@ -14,6 +14,13 @@ export const ProjectCard: React.FC<IProjectConfig> = ({
   const [imageIsLoaded, setImageIsLoaded] = useState<boolean>(false);
   const [secondImageIsLoaded, setSecondImageIsLoaded] =
     useState<boolean>(false);
+
+  useEffect(() => {
+    return () => {
+      setImageIsLoaded(false);
+      setSecondImageIsLoaded(false);
+    };
+  }, []);
 
   return (
     <Flex
@@ -59,7 +66,7 @@ export const ProjectCard: React.FC<IProjectConfig> = ({
             src={img1}
             alt={img1}
             loading="lazy"
-            onLoad={() => setImageIsLoaded(true)}
+            onLoad={() => setImageIsLoaded(!imageIsLoaded)}
           />
         </Skeleton>
       )}
@@ -71,7 +78,7 @@ export const ProjectCard: React.FC<IProjectConfig> = ({
             src={img2}
             alt={img2}
             loading="lazy"
-            onLoad={() => setSecondImageIsLoaded(true)}
+            onLoad={() => setSecondImageIsLoaded(!secondImageIsLoaded)}
           />
         </Skeleton>
       )}

@@ -1,11 +1,17 @@
 'use client';
 import { Image, Skeleton } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export const MainImage: React.FC<{ imgUrl: string }> = ({ imgUrl }) => {
   const [imageIsLoaded, setImageIsLoaded] = useState<boolean>(false);
 
-  const handleImageLoad = () => setImageIsLoaded(true);
+  const handleImageLoad = () => {
+    setImageIsLoaded(!imageIsLoaded);
+  };
+
+  useEffect(() => {
+    return () => setImageIsLoaded(false);
+  }, []);
 
   return (
     <Skeleton loading={!imageIsLoaded}>
