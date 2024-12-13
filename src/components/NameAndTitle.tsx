@@ -14,7 +14,7 @@ export const NameAndTitle: React.FC = () => (
       Stephen Leisy
     </Text>
     <Text fontWeight={300} fontSize={{ base: 'xs', md: 'md' }} zIndex="40">
-      Software Engineer | UX Designer
+      Software Engineer | UI/UX Designer
     </Text>
   </Flex>
 );

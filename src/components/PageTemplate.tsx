@@ -66,6 +66,7 @@ export const PageTemplate: React.FC<IPageTemplate> = ({
           {addLinkLine && (
             <Link
               display="block"
+              w="fit-content"
               mt={2}
               href="https://github.com/stephen-leisy/portfolioV2"
               target="blank"
