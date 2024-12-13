@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Image, Flex, Box, Link } from '@chakra-ui/react';
+import { Text, Image, Flex, Box } from '@chakra-ui/react';
 
 interface IPageTemplate {
   pageName: string;
