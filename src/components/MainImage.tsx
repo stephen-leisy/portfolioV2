@@ -6,12 +6,14 @@ export const MainImage: React.FC<{ imgUrl: string }> = ({ imgUrl }) => {
   const [imageIsLoaded, setImageIsLoaded] = useState<boolean>(false);
 
   const handleImageLoad = () => {
-    setImageIsLoaded(!imageIsLoaded);
+    console.log('on load running current state is: ', imageIsLoaded);
+    setImageIsLoaded(true);
   };
 
   useEffect(() => {
-    return () => setImageIsLoaded(false);
-  }, []);
+    console.log('use effect running loading state is: ', imageIsLoaded);
+    if (imageIsLoaded) console.log('loaded now?');
+  }, [imageIsLoaded]);
 
   return (
     <Skeleton loading={!imageIsLoaded}>
