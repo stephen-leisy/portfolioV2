@@ -66,7 +66,7 @@ export const ProjectCard: React.FC<IProjectConfig> = ({
             src={img1}
             alt={img1}
             loading="lazy"
-            onLoad={() => setImageIsLoaded(!imageIsLoaded)}
+            onLoad={() => setImageIsLoaded(true)}
           />
         </Skeleton>
       )}
@@ -78,7 +78,7 @@ export const ProjectCard: React.FC<IProjectConfig> = ({
             src={img2}
             alt={img2}
             loading="lazy"
-            onLoad={() => setSecondImageIsLoaded(!secondImageIsLoaded)}
+            onLoad={() => setSecondImageIsLoaded(true)}
           />
         </Skeleton>
       )}
