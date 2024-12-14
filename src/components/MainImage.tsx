@@ -6,14 +6,14 @@ export const MainImage: React.FC<{ imgUrl: string }> = ({ imgUrl }) => {
   const [imageIsLoaded, setImageIsLoaded] = useState<boolean>(false);
 
   const handleImageLoad = () => {
-    // console.log('on load running current state is: ', imageIsLoaded);
     setImageIsLoaded(true);
   };
 
   useEffect(() => {
-    console.log('use effect running loading state is: ', imageIsLoaded);
-    if (imageIsLoaded) console.log('loaded now?');
-    return () => setImageIsLoaded(true);
+    setTimeout(() => {
+      setImageIsLoaded(true);
+    }, 100);
+    return () => setImageIsLoaded(false);
   }, []);
 
   return (
@@ -23,7 +23,7 @@ export const MainImage: React.FC<{ imgUrl: string }> = ({ imgUrl }) => {
         maxW="600px"
         src={imgUrl}
         alt="images for portfolio site"
-        // loading="lazy"
+        loading="lazy"
         borderRadius="xl"
         onLoad={handleImageLoad}
       />
