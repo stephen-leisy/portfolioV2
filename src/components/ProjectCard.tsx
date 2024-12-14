@@ -20,7 +20,7 @@ export const ProjectCard: React.FC<IProjectConfig> = ({
     const timer = setTimeout(() => {
       setImageIsLoaded(true);
       setSecondImageIsLoaded(true);
-    }, 3000);
+    }, 1000);
     return () => {
       clearTimeout(timer);
       setImageIsLoaded(false);

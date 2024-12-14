@@ -13,7 +13,7 @@ export const MainImage: React.FC<{ imgUrl: string }> = ({ imgUrl }) => {
     //@TODO: Fix this weird loading bug in a way that does not require useTimeout
     const timer = setTimeout(() => {
       setImageIsLoaded(true);
-    }, 3000);
+    }, 1000);
     return () => {
       clearTimeout(timer);
       setImageIsLoaded(false);
