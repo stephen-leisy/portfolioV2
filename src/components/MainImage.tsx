@@ -11,8 +11,8 @@ export const MainImage: React.FC<{ imgUrl: string }> = ({ imgUrl }) => {
   };
 
   useEffect(() => {
-    // console.log('use effect running loading state is: ', imageIsLoaded);
-    // if (imageIsLoaded) console.log('loaded now?');
+    console.log('use effect running loading state is: ', imageIsLoaded);
+    if (imageIsLoaded) console.log('loaded now?');
   }, [imageIsLoaded]);
 
   return (
