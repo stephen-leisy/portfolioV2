@@ -22,7 +22,7 @@ export const MainImage: React.FC<{ imgUrl: string }> = ({ imgUrl }) => {
         maxW="600px"
         src={imgUrl}
         alt="images for portfolio site"
-        loading="lazy"
+        // loading="lazy"
         borderRadius="xl"
         onLoad={handleImageLoad}
       />
