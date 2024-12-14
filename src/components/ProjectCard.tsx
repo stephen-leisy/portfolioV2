@@ -16,9 +16,14 @@ export const ProjectCard: React.FC<IProjectConfig> = ({
     useState<boolean>(false);
 
   useEffect(() => {
+    //@TODO: Fix this weird loading bug in a way that does not require useTimeout
+    const timer = setTimeout(() => {
+      setImageIsLoaded(true);
+      setSecondImageIsLoaded(true);
+    }, 3000);
     return () => {
+      clearTimeout(timer);
       setImageIsLoaded(false);
-      setSecondImageIsLoaded(false);
     };
   }, []);
 
