@@ -13,7 +13,6 @@ export const PageWrapper: React.FC<{
     maxW={{ xl: '860px', '2xl': '1100px' }}
     w="60vw"
     flexDirection="column"
-    gap={{ base: 12, md: 16 }}
     pt={{ base: 72, lg: '20vh' }}
     textAlign={{ base: 'right', lg: 'left' }}
   >
