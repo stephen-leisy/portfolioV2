@@ -39,7 +39,7 @@ export const ProjectCard: React.FC<IProjectConfig> = ({
       _dark={{ bg: 'gray.700' }}
       opacity={isVisible ? 1 : 0}
       translate={isVisible ? '0%' : '-5%'}
-      filter={isVisible ? 'blur(0)' : 'blur(3px)'}
+      filter={isVisible ? 'blur(0)' : 'blur(5px)'}
       transition=".5s ease-in-out"
     >
       <Flex
