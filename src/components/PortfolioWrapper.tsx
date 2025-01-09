@@ -66,6 +66,7 @@ export const PortfolioWrapper: React.FC<{ children: React.ReactNode }> = ({
           >
             {!isAtBottom && (
               <Box
+                zIndex="999"
                 position="absolute"
                 style={{
                   animation:
