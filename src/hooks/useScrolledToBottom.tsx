@@ -26,9 +26,11 @@ export const useScrolledToBottom = (
   const handleScroll = () => {
     if (scrollBoxRef?.current) {
       if (
+        // checking basically is its within 2 pixels of the bottom. Close enough to not have the scroll down icon show.
         Math.trunc(
           scrollBoxRef.current.scrollHeight - scrollBoxRef.current.scrollTop
-        ) === scrollBoxRef.current.clientHeight
+        ) <
+        scrollBoxRef.current.clientHeight + 2
       ) {
         setIsAtBottom(true);
       } else setIsAtBottom(false);
