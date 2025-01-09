@@ -37,11 +37,12 @@ export const ScrollEffectPage: React.FC<{
           >
             {({ ref }) => {
               return (
-                <ProjectCard
-                  {...props}
-                  ref={ref}
-                  isVisible={visibleSection.includes(props.id)}
-                />
+                <div ref={ref}>
+                  <ProjectCard
+                    {...props}
+                    isVisible={visibleSection.includes(props.id)}
+                  />
+                </div>
               );
             }}
           </InView>

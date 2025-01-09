@@ -9,7 +9,6 @@ export const ProjectCard: React.FC<IProjectConfig> = ({
   link,
   linkDisplayTitle,
   isVisible,
-  ref,
   img2,
   iframeSource,
 }) => {
@@ -42,7 +41,6 @@ export const ProjectCard: React.FC<IProjectConfig> = ({
       translate={isVisible ? '0%' : '-5%'}
       filter={isVisible ? 'blur(0)' : 'blur(3px)'}
       transition=".5s ease-in-out"
-      ref={ref}
     >
       <Flex
         w="full"

@@ -5,7 +5,6 @@ export interface IProjectConfig {
   title: string;
   link: string;
   linkDisplayTitle: string;
-  ref?: any;
   isVisible?: boolean;
   img1?: string;
   img2?: string;
