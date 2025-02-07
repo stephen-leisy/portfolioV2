@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import { Providers } from './providers';
 import { PortfolioWrapper } from '@/components/PortfolioWrapper';
+import Script from 'next/script';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -21,6 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className={poppins.className}>
+      <Script
+        src="/new-relic/newRelicMonitoring.js"
+        strategy="afterInteractive"
+      />
       <body style={{ width: '100%', height: '100%' }}>
         <Providers>
           <PortfolioWrapper>{children}</PortfolioWrapper>
