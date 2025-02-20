@@ -1,12 +1,15 @@
-import { motion, isValidMotionProp } from 'framer-motion';
+import { motion, isValidMotionProp, TargetAndTransition } from 'framer-motion';
 import { chakra } from '@chakra-ui/react';
+import { IPositionState } from '@/types/IPositionState';
 
 const ChakraBox = chakra(motion.div, {
-  //@ts-ignore
+  // @ts-expect-error
   shouldForwardProp: isValidMotionProp,
 });
 
-export const CursorHoverPill: React.FC<{ position: any }> = ({ position }) => (
+export const CursorHoverPill: React.FC<{ position: IPositionState }> = ({
+  position,
+}) => (
   <ChakraBox
     animate={position}
     position="absolute"
