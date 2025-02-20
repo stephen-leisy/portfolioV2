@@ -2,4 +2,6 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 # npm test
+
+echo "✨✨✨ Running TypeScript checks before commit... ✨✨✨"
 pnpm lint-staged
