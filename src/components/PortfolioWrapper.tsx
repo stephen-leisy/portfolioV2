@@ -1,7 +1,7 @@
 'use client';
 
 import { Flex, Box } from '@chakra-ui/react';
-import { Navigation } from './Navigation';
+import { Navigation } from './navigation/Navigation';
 import { NameAndTitle } from './NameAndTitle';
 import { useRef } from 'react';
 import { usePathname } from 'next/navigation';
