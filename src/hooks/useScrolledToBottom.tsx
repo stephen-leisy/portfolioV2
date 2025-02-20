@@ -50,7 +50,7 @@ export const useScrolledToBottom = (
     } else {
       setIsAtBottom(false);
     }
-  }, [pathname]);
+  }, [pathname, scrollBoxRef]);
 
   return {
     handleScroll,

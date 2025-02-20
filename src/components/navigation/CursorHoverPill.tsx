@@ -4,6 +4,7 @@ import { IPositionState } from '@/types/IPositionState';
 
 const ChakraBox = chakra(motion.div, {
   // @ts-expect-error
+  // @TODO: Need to cricle back and properly set type.
   shouldForwardProp: isValidMotionProp,
 });
 
