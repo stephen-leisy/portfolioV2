@@ -1,4 +1,4 @@
-import { motion, isValidMotionProp, TargetAndTransition } from 'framer-motion';
+import { motion, isValidMotionProp } from 'framer-motion';
 import { chakra } from '@chakra-ui/react';
 import { IPositionState } from '@/types/IPositionState';
 
