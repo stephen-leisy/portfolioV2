@@ -50,7 +50,8 @@ export const useScrolledToBottom = (
     } else {
       setIsAtBottom(false);
     }
-  }, [pathname, scrollBoxRef]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname]);
 
   return {
     handleScroll,
