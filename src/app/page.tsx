@@ -3,7 +3,7 @@ import { PageTemplate } from '@/components/PageTemplate';
 const Home: React.FC = () => (
   <PageTemplate
     pageName="Home"
-    columnOne=" Hello there and welcome to my small portion of the internet! Im a curious
+    columnOne=" Hello there! Welcome to my small portion of the internet! Im a curious
       person who likes to build things with code. I believe web development is
       creative at its core and enjoy utilizing my technical skill and artistic
       background to build practical, scalable applications with elegant, clean code. I'm open to work and would love to collaborate and build something fun."
