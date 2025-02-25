@@ -1,0 +1,48 @@
+name: Build and Deploy Portfolio Site
+
+on:
+  push:
+    branches:
+      - main # Runs when pushing to the 'main' branch
+  pull_request:
+    branches:
+      - main # Runs when creating a PR against 'main'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2 # Check out the code from the repository
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '22.14.0' # Specify your Node.js version
+
+      - name: Install pnpm
+        run: npm install -g pnpm # Install pnpm globally
+
+      - name: Install Dependencies
+        run: pnpm install # Use pnpm to install dependencies
+
+      # - name: Run Tests (Optional)
+      #   run: pnpm test
+
+      - name: Build Project
+        run: pnpm run build # Build the Next.js app with pnpm
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build # Ensure that the deploy step only runs after the build
+
+    steps:
+      - name: Install Vercel CLI
+        run: npm install -g vercel # Install Vercel CLI globally
+
+      - name: Deploy to Vercel
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' # Only deploy on push to 'main'
+        run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }} --yes # Deploy to Vercel with auto-confirmation
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }} # Vercel token from GitHub Secrets
